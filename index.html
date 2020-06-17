@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Button</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="pizzabutton">
+    <button><p id="buttontext">Place Order</p></button>
+    <div class="pizzaslices">
+        <img src="Pizza/Pizza-01.png" alt="slice 1" id="s1" class="pizza">
+        <img src="Pizza/Pizza-02.png" alt="slice 2" id="s2" class="pizza">
+        <img src="Pizza/Pizza-03.png" alt="slice 3" id="s3" class="pizza">
+        <img src="Pizza/Pizza-04.png" alt="slice 4" id="s4" class="pizza">
+        <img src="Pizza/Pizza-05.png" alt="slice 5" id="s5" class="pizza">
+        <img src="Pizza/Pizza-07.png" alt="slice 6" id="s6" class="pizza">
+    </div>
+    <div class="pizzapan">
+        <img src="Pizza/Pizza-06.png" alt="slice 7" id="pan" class="pizza">
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js" integrity="sha256-TzB4159Z3KQzkMIC44o6Jf9VM2La3nQUP0H364BGp7A=" crossorigin="anonymous"></script>
+<script>
+    document.querySelector(".pizzabutton").addEventListener("click",pizzaani);
+    function pizzaani()
+    {
+    var tl = new gsap.timeline();
+    tl.fromTo("#buttontext",{duration: 1,y:0},{duration:1,y:-100,ease:"power4.inOut"});
+    tl.to('#s1',{duration: 1,opacity:1,ease:"steps(1)"},"-=0.6");
+    tl.to('#s2',{duration: 1,opacity:1,ease:"steps(1)"});
+    tl.to('#s3',{duration: 1,opacity:1,ease:"steps(1)"});
+    tl.to('#s4',{duration: 1,opacity:1,ease:"steps(1)"});
+    tl.to('#s5',{duration: 1,opacity:1,ease:"steps(1)"});
+    tl.to('#s6',{duration: 1,opacity:1,ease:"steps(1)"});
+    tl.fromTo("#pan",{duration: 1.5,y:100,opacity:1},{duration:1.5,opacity:1,y:0,ease:"expo.inOut"});
+    setTimeout(() => {  document.querySelector("#buttontext").innerHTML = "Order Placed" }, 2000);
+    tl.to(".pizza",{duration: 1.5, y:100,ease:"expo.inOut"});
+    tl.from("#buttontext",{duration:1,y:-100,ease:"power4.inOUt"},"-=1");
+}
+</script>
+</html>

@@ -1,0 +1,61 @@
+body{
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pizzabutton{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    overflow: hidden;
+    width: 400px;
+    height: 95px;
+    border-radius: 100px;
+    background-color: none;
+    position: relative;
+}
+button{
+    background: linear-gradient(#353535,#000000);
+    border: none;
+    width: 401px;
+    height: 100px;
+    border-radius: 100px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    cursor: pointer;
+}
+.button{
+    overflow: hidden;
+}
+.pizzaslices{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pizzapan{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+.pizza{
+    z-index: 2;
+    width: 80%;
+    opacity:0;
+}
+img{
+    position: absolute;
+}
+#pan{
+    z-index: 0;
+}
